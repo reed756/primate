@@ -1,0 +1,52 @@
+swiper-container {
+  width: 100%;
+  height: 100%;
+  --swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-family: Poppins-Bold;
+    font-size: 41px;
+    font-weight: 700;
+    line-height: 43px;
+    letter-spacing: 0em;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+.slide-one {
+  background: left / cover no-repeat url("../../assets/welcome-1.svg");
+}
+.slide-two {
+  background: left / cover no-repeat url("../../assets/welcome-2.svg");
+}
+.slide-three {
+  background: left / cover no-repeat url("../../assets/welcome-3.svg");
+}
+.slide-four {
+  background: left / cover no-repeat url("../../assets/welcome-4.svg");
+}
+.prev_btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #55ffa3;
+  z-index: 1;
+}
+.next_btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  --background: #55ffa3;
+  color: #0e0f11;
+  z-index: 1;
+}

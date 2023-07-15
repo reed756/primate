@@ -1,0 +1,36 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+  <swiper-container #swiper (afterinit)="swiperReady()" (slideChange)="swiperSlideChanged($event)" [pagination]="true">
+    <swiper-slide class="slide-one">
+      <h1>
+        Welcome to Primate
+      </h1>
+    </swiper-slide>
+    <swiper-slide class="slide-two">
+      <h1>
+        Promoting Ethical Primate Tourism
+      </h1>
+    </swiper-slide>
+    <swiper-slide class="slide-three">
+      <h1>
+        Helping you and primates stay safe
+      </h1>
+    </swiper-slide>
+    <swiper-slide class="slide-four">
+      <h1>
+        Let's get exploring!
+      </h1>
+    </swiper-slide>
+  </swiper-container>
+  <ion-button *ngIf="step && step > 0" (click)="prev()" expand="block" fill="clear" shape="round"
+    class="prev_btn">Prev</ion-button>
+  <ion-button *ngIf="step < 3" (click)="next()" expand="block" shape="round" class="next_btn">
+    Next
+  </ion-button>
+  <ion-button *ngIf="step && step === 3" (click)="proceed()" expand="block" shape="round" class="next_btn">
+    Proceed
+  </ion-button>
+</ion-content>
