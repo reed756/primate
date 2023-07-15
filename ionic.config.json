@@ -1,0 +1,7 @@
+{
+  "name": "Primate",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
