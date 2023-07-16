@@ -1,0 +1,42 @@
+ion-content {
+  --background: left / cover no-repeat url("../../assets/map.svg");
+
+  .filter_col {
+    display: flex;
+    ion-button {
+      --font-family: Poppins-bold;
+      --color: #0e0f11;
+      --background: #fff;
+      --padding-start: 12px;
+      --padding-end: 12px;
+      font-size: 14.22px;
+      ion-icon {
+        font-size: 12px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  ion-searchbar {
+    --font-family: Poppins-regular;
+    --background: #fff;
+    --color: #0e0f11;
+    --placeholder-color: #0e0f11;
+    --icon-color: #0e0f11;
+    --border-radius: 25px;
+    ion-icon {
+      position: absolute;
+      right: 5%;
+    }
+  }
+
+  .guidelines_row {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    ion-col {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

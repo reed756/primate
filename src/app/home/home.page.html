@@ -1,0 +1,37 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+  <ion-searchbar placeholder="Explore primate sites">
+    <ion-icon slot="end" name="reorder-three-outline"></ion-icon>
+  </ion-searchbar>
+  <ion-row>
+    <ion-col size="12" class="filter_col ion-justify-content-between">
+      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" size="small">
+        <ion-icon name="earth-outline"></ion-icon>
+        All Sites
+      </ion-button>
+      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" size="small">
+        <ion-icon name="star-outline"></ion-icon>
+        Favourites
+      </ion-button>
+      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" size="small">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        I've Been
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="guidelines_row">
+    <ion-col size="12">
+      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+        Guidelines
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
