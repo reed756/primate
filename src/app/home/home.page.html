@@ -3,8 +3,8 @@
 </ion-header>
 
 <ion-content class="ion-padding-horizontal">
-  <ion-searchbar placeholder="Explore primate sites">
-    <ion-icon slot="end" name="reorder-three-outline"></ion-icon>
+  <ion-searchbar placeholder="Explore primate sites" class="custom">
+    <ion-icon name="reorder-three-outline"></ion-icon>
   </ion-searchbar>
   <ion-row>
     <ion-col size="12" class="filter_col ion-justify-content-between">
@@ -22,14 +22,20 @@
       </ion-button>
     </ion-col>
   </ion-row>
+  <ion-fab slot="fixed" vertical="top" horizontal="end" class="side_fab">
+    <ion-fab-button size="small"><fa-icon [icon]="faTableList"></fa-icon></ion-fab-button>
+    <ion-fab-button size="small"><fa-icon [icon]="faLayerGroup"></fa-icon></ion-fab-button>
+    <ion-fab-button size="small"><fa-icon [icon]="faLocationArrow"></fa-icon></ion-fab-button>
+  </ion-fab>
   <ion-row class="guidelines_row">
     <ion-col size="12">
       <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
         Guidelines
+        <img src="../../assets/little_monkey.svg" alt="monkey_icon">
       </ion-button>
     </ion-col>
   </ion-row>
-  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom" class="add_btn">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

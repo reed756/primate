@@ -24,9 +24,26 @@ ion-content {
     --placeholder-color: #0e0f11;
     --icon-color: #0e0f11;
     --border-radius: 25px;
+    padding-bottom: 0;
+    --border-radius: 36px;
+    height: 10vh;
     ion-icon {
       position: absolute;
-      right: 5%;
+      right: 7%;
+      z-index: 1;
+    }
+  }
+
+  .custom {
+    .searchbar-input-container {
+      height: 62px;
+    }
+  }
+
+  .side_fab {
+    margin-top: 30%;
+    ion-fab-button {
+      --background: #fff;
     }
   }
 
@@ -37,6 +54,19 @@ ion-content {
     ion-col {
       display: flex;
       justify-content: center;
+      ion-button {
+        --color: #fff;
+        --background: #0e0f11;
+        height: 37px;
+        width: 145px;
+        img {
+          margin-left: 5px;
+        }
+      }
     }
+  }
+
+  .add_btn {
+    --background: #55ffa3;
   }
 }
