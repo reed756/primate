@@ -4,20 +4,20 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
     path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    loadChildren: () => import('./folder/folder.module').then(m => m.FolderPageModule)
   },
   {
     path: 'welcome',
-    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
+    loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomePageModule)
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   }
 ];
 
@@ -27,4 +27,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

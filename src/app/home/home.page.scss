@@ -18,7 +18,6 @@ ion-content {
   }
 
   ion-searchbar {
-    --font-family: Poppins-regular;
     --background: #fff;
     --color: #0e0f11;
     --placeholder-color: #0e0f11;
@@ -27,16 +26,13 @@ ion-content {
     padding-bottom: 0;
     --border-radius: 36px;
     height: 10vh;
-    ion-icon {
+    --border: 1px solid #bfbfbf;
+    ion-menu-button {
       position: absolute;
       right: 7%;
       z-index: 1;
-    }
-  }
-
-  .custom {
-    .searchbar-input-container {
-      height: 62px;
+      font-size: 24px;
+      color: #000000;
     }
   }
 
@@ -68,5 +64,11 @@ ion-content {
 
   .add_btn {
     --background: #55ffa3;
+  }
+
+  .map_markers {
+    position: absolute;
+    top: 237px;
+    left: 22px;
   }
 }

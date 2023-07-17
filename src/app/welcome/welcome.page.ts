@@ -31,7 +31,7 @@ export class WelcomePage implements OnInit {
     this.step = ev.activeIndex;
   }
   proceed() {
-    this.router.navigate(['/folder/inbox']);
+    this.router.navigate(['/home']);
   }
 
   prev() {

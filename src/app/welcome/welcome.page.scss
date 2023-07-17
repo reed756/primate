@@ -13,13 +13,26 @@ swiper-slide {
   align-items: center;
   justify-content: center;
   h1 {
-    font-family: Poppins-Bold;
     font-size: 41px;
     font-weight: 700;
     line-height: 43px;
     letter-spacing: 0em;
     color: #ffffff;
     text-align: center;
+  }
+  width: 100%;
+  ion-col {
+    display: flex;
+    justify-content: center;
+    ion-button {
+      --color: #fff;
+      --background: #0e0f11;
+      height: 37px;
+      width: 272px;
+      img {
+        margin-left: 5px;
+      }
+    }
   }
 }
 
@@ -41,12 +54,15 @@ swiper-slide {
   left: 0;
   color: #55ffa3;
   z-index: 1;
+  margin-left: 16px;
 }
 .next_btn {
   position: absolute;
   bottom: 0;
   right: 0;
   --background: #55ffa3;
+  margin-right: 16px;
   color: #0e0f11;
   z-index: 1;
+  width: 104px;
 }

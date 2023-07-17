@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { register } from 'swiper/element/bundle'
+import { MenuController } from '@ionic/angular';
+import { register } from 'swiper/element/bundle';
 
 register();
 @Component({
@@ -9,13 +10,18 @@ register();
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
+    { title: 'Home', url: '/home' },
+    { title: 'Primate Info', url: '/home' },
+    { title: 'Primates Guide', url: '/home' },
+    { title: 'My Sightings', url: '/home' },
+    { title: 'My Account', url: '/home' },
+    { title: 'Feedback', url: '/home' },
+    { title: 'Language', url: '/home' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() { }
+  constructor(private menu: MenuController) { }
+
+  closeMenu() {
+    this.menu.close();
+  }
 }

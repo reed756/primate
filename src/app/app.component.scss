@@ -70,7 +70,7 @@ ion-menu.ios ion-content {
 }
 
 ion-menu.ios ion-list {
-  padding: 20px 0 0 0;
+  padding: 20px 0 0 16px;
 }
 
 ion-menu.ios ion-note {
@@ -116,4 +116,32 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+ion-col {
+  display: flex;
+  justify-content: end;
+}
+
+.menu_btn {
+  color: #3e4247;
+  font-weight: 400;
+  font-family: "Poppins-medium";
+  ion-icon {
+    margin-right: 5px;
+  }
+}
+
+.socials_row {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  ion-col {
+    display: flex;
+    ion-icon {
+      font-size: 31px;
+      color: #878f97;
+    }
+  }
 }

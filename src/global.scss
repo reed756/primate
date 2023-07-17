@@ -25,10 +25,22 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-@font-face {
-  font-family: "Poppins-bold";
-  src: url("../src/assets/fonts/Poppins-Bold.ttf");
+.searchbar-input-container.sc-ion-searchbar-ios {
+  height: 62px;
+}
 
-  font-family: "Poppins-regular";
-  src: url("../src/assets/fonts/Poppins-Regular.ttf");
+.searchbar-left-aligned.sc-ion-searchbar-ios-h
+  .searchbar-input.sc-ion-searchbar-ios {
+  padding-inline-start: 50px;
+}
+
+.searchbar-left-aligned.sc-ion-searchbar-ios-h
+  .searchbar-search-icon.sc-ion-searchbar-ios {
+  margin-inline-start: 12px;
+}
+
+.item.sc-ion-label-ios-h,
+.item .sc-ion-label-ios-h {
+  color: #0e0f11;
+  font-weight: 700;
 }

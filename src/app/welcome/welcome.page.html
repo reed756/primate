@@ -18,6 +18,14 @@
       <h1>
         Helping you and primates stay safe
       </h1>
+      <ion-row class="guidelines_row">
+        <ion-col size="12">
+          <ion-button expand="block" fill="clear" shape="round">
+            See Illustrated Guidelines
+            <img src="../../assets/little_monkey.svg" alt="monkey_icon">
+          </ion-button>
+        </ion-col>
+      </ion-row>
     </swiper-slide>
     <swiper-slide class="slide-four">
       <h1>
@@ -27,10 +35,10 @@
   </swiper-container>
   <ion-button *ngIf="step && step > 0" (click)="prev()" expand="block" fill="clear" shape="round"
     class="prev_btn">Prev</ion-button>
-  <ion-button *ngIf="step < 3" (click)="next()" expand="block" shape="round" class="next_btn">
+  <ion-button *ngIf="step < 3" (click)="next()" expand="block" class="next_btn">
     Next
   </ion-button>
-  <ion-button *ngIf="step && step === 3" (click)="proceed()" expand="block" shape="round" class="next_btn">
+  <ion-button *ngIf="step && step === 3" (click)="proceed()" expand="block" class="next_btn">
     Proceed
   </ion-button>
 </ion-content>
