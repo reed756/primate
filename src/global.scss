@@ -49,3 +49,10 @@
   color: #0e0f11;
   font-weight: 700;
 }
+
+ion-content {
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
+  --padding-top: var(--ion-safe-area-top);
+  --padding-bottom: var(--ion-safe-area-bottom);
+}
