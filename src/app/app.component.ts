@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SplashScreen } from '@capacitor/splash-screen';
 import { MenuController } from '@ionic/angular';
 import { register } from 'swiper/element/bundle';
 
@@ -20,7 +21,20 @@ export class AppComponent {
     { title: 'Language', url: '/' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor(private menu: MenuController, private router: Router,) { }
+  constructor(private menu: MenuController, private router: Router) {
+    this.initApp()
+  }
+
+  async initApp() {
+    await SplashScreen.hide();
+    await SplashScreen.show({
+      autoHide: false,
+    });
+    await SplashScreen.show({
+      showDuration: 2000,
+      autoHide: true,
+    });
+  }
 
   isRouteActive(url: string): boolean {
     return this.router.isActive(url, true);
