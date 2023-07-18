@@ -50,14 +50,9 @@
   font-weight: 700;
 }
 
-.safe--area {
-  padding-top: constant(safe-area-inset-top);
-  padding-top: env(safe-area-inset-top);
-  --ion-safe-area-top: 20px;
-  --ion-safe-area-bottom: 20px;
-}
-
 ion-content {
   padding-top: var(--ion-safe-area-top);
   padding-bottom: var(--ion-safe-area-bottom);
+  --padding-top: var(--ion-safe-area-top);
+  --padding-bottom: var(--ion-safe-area-bottom);
 }
