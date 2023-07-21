@@ -1,0 +1,46 @@
+.icon_row {
+  ion-col {
+    display: flex;
+    justify-content: end;
+    ion-icon {
+      font-size: 40px;
+    }
+  }
+}
+
+.form_row {
+  ion-col {
+    ion-label {
+      font-size: 14.22px;
+    }
+    ion-input {
+      font-size: 14.22px;
+      border: 1px solid #0e0f11;
+      border-radius: 5px;
+      margin-top: 4px;
+    }
+  }
+}
+
+.button_row {
+  ion-col {
+    ion-button {
+      font-size: 16px;
+      color: #0e0f11;
+    }
+    .forgot_password_btn {
+      font-family: "Poppins-medium";
+      font-size: 14.22px;
+      color: #0e0f11;
+      margin-top: 32px;
+    }
+    .sign_in_btn {
+      --background: #0e0f11;
+      color: #fff;
+      margin-top: 15%;
+    }
+    .sign_up_btn {
+      font-family: "Poppins-medium";
+    }
+  }
+}

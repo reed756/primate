@@ -1,0 +1,33 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-row class="icon_row">
+    <ion-col size="12" class="ion-no-padding">
+      <ion-icon name="chevron-down-circle"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row class="form_row ion-padding-top ion-margin-top">
+    <ion-col size="12" class="ion-no-padding">
+      <ion-label for="email">Email</ion-label>
+      <ion-input name="email" type="text" fill="outline" class="ion-margin-bottom"></ion-input>
+      <ion-label for="password">Password</ion-label>
+      <ion-input name="password" type="text" fill="outline"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row class="button_row">
+    <ion-col size="12" class="ion-no-padding">
+      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round"
+        class="forgot_password_btn ion-margin-bottom">
+        Forgot your password?
+      </ion-button>
+      <ion-button (click)="onClick()" expand="block" class="sign_in_btn">
+        Sign in
+      </ion-button>
+      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" class="sign_up_btn ion-margin-top">
+        No account? Sign up
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
