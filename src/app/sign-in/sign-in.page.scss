@@ -19,6 +19,14 @@
       border-radius: 5px;
       margin-top: 4px;
       --padding-start: 8px;
+      &.green_shadow {
+        box-shadow: 0px 0px 0px 6px #55ffa347;
+        border: 1px solid #05af53;
+      }
+      &.red_shadow {
+        box-shadow: 0px 0px 0px 6px #fb303b1a;
+        border: 1.25px solid #fc4b54;
+      }
     }
   }
 }

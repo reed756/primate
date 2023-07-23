@@ -12,17 +12,18 @@
     <ion-col size="12" class="ion-no-padding">
       <form [formGroup]="signInForm">
         <ion-label for="email">Email</ion-label>
-        <ion-input name="email" type="text" fill="outline" formControlName="email"
-          class="ion-margin-bottom"></ion-input>
+        <ion-input name="email" type="text" fill="outline" formControlName="email" class="ion-margin-bottom"
+          [ngClass]="{green_shadow : signInForm.controls['email'].valid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched), red_shadow : signInForm.controls['email'].invalid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)}"></ion-input>
         <ion-note
           *ngIf="signInForm.controls['email'].invalid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)">
-          Email address is required.
+          You must enter valid email address.
         </ion-note>
         <ion-label for="password">Password</ion-label>
-        <ion-input name="password" type="text" fill="outline" formControlName="password"></ion-input>
+        <ion-input name="password" type="text" fill="outline" formControlName="password"
+          [ngClass]="{green_shadow : signInForm.controls['password'].valid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched), red_shadow : signInForm.controls['password'].invalid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched)}"></ion-input>
         <ion-note *ngIf="signInForm.controls['password'].invalid && (signInForm.controls['password'].dirty ||
           signInForm.controls['password'].touched)">
-          Password is required.
+          You must enter valid password.
         </ion-note>
       </form>
     </ion-col>
