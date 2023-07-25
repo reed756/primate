@@ -12,15 +12,23 @@
     <ion-col size="12" class="ion-no-padding">
       <form [formGroup]="signInForm">
         <ion-label for="email">Email</ion-label>
-        <ion-input name="email" type="text" fill="outline" formControlName="email" class="ion-margin-bottom"
+        <ion-input name="email" type="text" fill="outline" formControlName="email" class="ion-margin-bottom border"
           [ngClass]="{green_shadow : signInForm.controls['email'].valid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched), red_shadow : signInForm.controls['email'].invalid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)}"></ion-input>
         <ion-note
           *ngIf="signInForm.controls['email'].invalid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)">
           You must enter valid email address.
         </ion-note>
         <ion-label for="password">Password</ion-label>
-        <ion-input name="password" type="text" fill="outline" formControlName="password"
-          [ngClass]="{green_shadow : signInForm.controls['password'].valid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched), red_shadow : signInForm.controls['password'].invalid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched)}"></ion-input>
+        <ion-item lines="none" class="border"
+          [ngClass]="{green_shadow : signInForm.controls['password'].valid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched), red_shadow : signInForm.controls['password'].invalid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched)}">
+          <ion-input name="password" [type]="showPassword ? 'text' : 'password'" fill="outline"
+            formControlName="password">
+          </ion-input>
+          <ion-button (click)="togglePassword()">
+            <ion-icon slot="icon-only" name="eye" *ngIf="showPassword"></ion-icon>
+            <ion-icon slot="icon-only" name="eye-off" *ngIf="!showPassword"></ion-icon>
+          </ion-button>
+        </ion-item>
         <ion-note *ngIf="signInForm.controls['password'].invalid && (signInForm.controls['password'].dirty ||
           signInForm.controls['password'].touched)">
           You must enter valid password.

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,6 +7,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./sign-in.page.scss'],
 })
 export class SignInPage implements OnInit {
+
+  showPassword: boolean = false;
+
+  password = '';
 
   signInForm: FormGroup;
 
@@ -31,4 +35,8 @@ export class SignInPage implements OnInit {
     console.log(this.signInForm?.value);
   }
 
+  togglePassword() {
+    console.log('hello');
+    this.showPassword = !this.showPassword;
+  }
 }
