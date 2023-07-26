@@ -1,0 +1,64 @@
+<ion-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-row class="icon_row">
+    <ion-col size="12" class="ion-no-padding">
+      <ion-icon name="chevron-down-circle"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row class="form_row ion-padding-top ion-margin-top">
+    <ion-col size="12" class="ion-no-padding">
+      <form [formGroup]="signUpForm">
+        <ion-label for="fullName">Full Name</ion-label>
+        <ion-input name="fullName" type="text" fill="outline" formControlName="fullName"
+          class="ion-margin-bottom border"
+          [ngClass]="{green_shadow : signUpForm.controls['fullName'].valid && (signUpForm.controls['fullName'].dirty || signUpForm.controls['fullName'].touched), red_shadow : signUpForm.controls['fullName'].invalid && (signUpForm.controls['fullName'].dirty || signUpForm.controls['fullName'].touched)}"></ion-input>
+        <ion-note
+          *ngIf="signUpForm.controls['fullName'].invalid && (signUpForm.controls['fullName'].dirty || signUpForm.controls['fullName'].touched)">
+          You must enter a name.
+        </ion-note>
+        <ion-label for="email">Email</ion-label>
+        <ion-input name="email" type="text" fill="outline" formControlName="email" class="ion-margin-bottom border"
+          [ngClass]="{green_shadow : signUpForm.controls['email'].valid && (signUpForm.controls['email'].dirty || signUpForm.controls['email'].touched), red_shadow : signUpForm.controls['email'].invalid && (signUpForm.controls['email'].dirty || signUpForm.controls['email'].touched)}"></ion-input>
+        <ion-note
+          *ngIf="signUpForm.controls['email'].invalid && (signUpForm.controls['email'].dirty || signUpForm.controls['email'].touched)">
+          You must enter valid email address.
+        </ion-note>
+        <ion-label for="password">Password</ion-label>
+        <ion-item lines="none" class="ion-margin-bottom border"
+          [ngClass]="{green_shadow : signUpForm.controls['password'].valid && (signUpForm.controls['password'].dirty || signUpForm.controls['password'].touched), red_shadow : signUpForm.controls['password'].invalid && (signUpForm.controls['password'].dirty || signUpForm.controls['password'].touched)}">
+          <ion-input name="password" [type]="showPassword ? 'text' : 'password'" fill="outline"
+            formControlName="password">
+          </ion-input>
+          <ion-button (click)="togglePassword()">
+            <ion-icon slot="icon-only" name="eye" *ngIf="showPassword"></ion-icon>
+            <ion-icon slot="icon-only" name="eye-off" *ngIf="!showPassword"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-note *ngIf="signUpForm.controls['password'].invalid && (signUpForm.controls['password'].dirty ||
+          signUpForm.controls['password'].touched)">
+          You must enter valid password.
+        </ion-note>
+        <ion-label>Nationality (optional)</ion-label>
+        <ion-searchbar #searchBar class="ion-no-padding" placeholder="" inputmode="text" type="text"
+          (ionChange)="onSearchChange($event)" (ionInput)="handleInput($event)" [debounce]="250"></ion-searchbar>
+        <ion-list *ngIf="results.length > 0">
+          <ion-item *ngFor="let result of results" (click)="setNationality(result)">
+            <ion-label>{{ result }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-col>
+  </ion-row>
+  <ion-row class="button_row">
+    <ion-col size="12" class="ion-no-padding">
+      <ion-button (click)="signUp()" expand="block" class="sign_in_btn" [disabled]="!signUpForm.valid">
+        Create Account
+      </ion-button>
+      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" class="sign_up_btn ion-margin-top">
+        Cancel
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
