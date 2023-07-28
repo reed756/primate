@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SignInPageRoutingModule } from './sign-in-routing.module';
 
 import { SignInPage } from './sign-in.page';
-import { ComponentsModule } from '../components/show-hide-password/components.module';
+import { ComponentsModule } from '../../components/show-hide-password/components.module';
 
 @NgModule({
   imports: [

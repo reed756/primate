@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AlertController, LoadingController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -180,7 +183,7 @@ export class SignUpPage implements OnInit {
 
   newNationalities: any = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private loadingCtrl: LoadingController, private authService: AuthService, private router: Router, private alertCtrl: AlertController) {
     this.signUpForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
       email: ['', [Validators.required, Validators.email, Validators.minLength(5), Validators.maxLength(50)]],
@@ -224,8 +227,30 @@ export class SignUpPage implements OnInit {
 
   }
 
-  signUp() {
-    console.log(this.signUpForm.value);
+  async showAlert(header: string, message: string) {
+    const alert = await this.alertCtrl.create({
+      header,
+      message,
+      buttons: ['OK']
+    })
+    await alert.present();
+  }
+
+  async signUp() {
+    const loading = await this.loadingCtrl.create();
+    await loading.present();
+
+    const user = await this.authService.register(
+      this.signUpForm.getRawValue()
+    )
+    console.log("rocket ~ sign-up.page.ts:249 ~ LoginPage ~ register ~ user", user);
+    await loading.dismiss();
+
+    if (user) {
+      this.router.navigateByUrl('/welcome', { replaceUrl: true })
+    } else {
+      this.showAlert('Registration failed', 'Please try again');
+    }
   }
 
 }

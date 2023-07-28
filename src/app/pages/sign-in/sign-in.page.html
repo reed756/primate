@@ -38,14 +38,14 @@
   </ion-row>
   <ion-row class="button_row">
     <ion-col size="12" class="ion-no-padding">
-      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round"
+      <ion-button (click)="forgotPassword()" expand="block" fill="clear" shape="round"
         class="forgot_password_btn ion-margin-bottom">
         Forgot your password?
       </ion-button>
       <ion-button (click)="signIn()" expand="block" class="sign_in_btn" [disabled]="!signInForm.valid">
         Sign in
       </ion-button>
-      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" class="sign_up_btn ion-margin-top">
+      <ion-button (click)="signUp()" expand="block" fill="clear" shape="round" class="sign_up_btn ion-margin-top">
         No account? Sign up
       </ion-button>
     </ion-col>
