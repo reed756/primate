@@ -39,7 +39,10 @@ ion-menu.md ion-item {
   border-radius: 4px;
   --background: transparent;
   border-radius: 16px;
-  max-width: 70%;
+  display: table;
+  ion-label {
+    margin-right: 0;
+  }
 }
 
 ion-menu.md ion-item.selected {
@@ -73,9 +76,11 @@ ion-menu.ios ion-item {
   --padding-end: 16px;
   --min-height: 50px;
   border-radius: 16px;
-  max-width: 70%;
+  display: table;
+  ion-label {
+    margin-right: 0;
+  }
 }
-
 ion-menu.ios ion-item.selected ion-icon {
 }
 

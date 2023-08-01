@@ -29,6 +29,30 @@ const routes: Routes = [
     path: 'forgotten-password',
     loadChildren: () => import('./pages/forgotten-password/forgotten-password.module').then(m => m.ForgottenPasswordPageModule),
     ...canActivate(redirectLoggedInToHome),
+  },
+  {
+    path: 'primate-info',
+    loadChildren: () => import('./pages/primate-info/primate-info.module').then( m => m.PrimateInfoPageModule)
+  },
+  {
+    path: 'primates-guide',
+    loadChildren: () => import('./pages/primates-guide/primates-guide.module').then( m => m.PrimatesGuidePageModule)
+  },
+  {
+    path: 'my-sightings',
+    loadChildren: () => import('./pages/my-sightings/my-sightings.module').then( m => m.MySightingsPageModule)
+  },
+  {
+    path: 'my-account',
+    loadChildren: () => import('./pages/my-account/my-account.module').then( m => m.MyAccountPageModule)
+  },
+  {
+    path: 'feedback',
+    loadChildren: () => import('./pages/feedback/feedback.module').then( m => m.FeedbackPageModule)
+  },
+  {
+    path: 'language',
+    loadChildren: () => import('./pages/language/language.module').then( m => m.LanguagePageModule)
   }
 ];
 
