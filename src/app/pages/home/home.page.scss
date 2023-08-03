@@ -1,5 +1,5 @@
 ion-content {
-  --background: left / cover no-repeat url("../../../assets/map.svg");
+  // --background: left / cover no-repeat url("../../../assets/map.svg");
 
   .filter_col {
     display: flex;
@@ -72,4 +72,9 @@ ion-content {
     top: 237px;
     left: 22px;
   }
+}
+
+#map {
+  height: 100%;
+  width: 100%;
 }

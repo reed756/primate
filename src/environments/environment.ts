@@ -11,7 +11,10 @@ export const environment = {
     authDomain: 'primate-1ddc3.firebaseapp.com',
     messagingSenderId: '946183748038',
   },
-  production: false
+  production: false,
+  mapbox: {
+    accessToken: 'pk.eyJ1IjoicmVlZGowMDgiLCJhIjoiY2xrdHRhc20yMGZ4aDNnbzRyYnNiODJmciJ9.1_eykL-2UAP_Ff4JKQnAYQ'
+  }
 };
 
 /*

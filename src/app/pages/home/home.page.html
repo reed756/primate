@@ -2,7 +2,8 @@
 
 </ion-header>
 
-<ion-content class="">
+<ion-content fullscreen="true">
+  <div id="map" class="map"></div>
   <ion-searchbar placeholder="Explore primate sites" class="custom">
     <ion-menu-button></ion-menu-button>
   </ion-searchbar>
@@ -27,7 +28,7 @@
     <ion-fab-button size="small"><fa-icon [icon]="faLayerGroup"></fa-icon></ion-fab-button>
     <ion-fab-button size="small"><fa-icon [icon]="faLocationArrow"></fa-icon></ion-fab-button>
   </ion-fab>
-  <img src="../../assets/cluster.svg" alt="map_markers" class="map_markers">
+  <!-- <img src="../../assets/cluster.svg" alt="map_markers" class="map_markers"> -->
   <ion-row class="guidelines_row">
     <ion-col size="12">
       <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
