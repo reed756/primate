@@ -56,4 +56,12 @@ export class HomePage implements OnInit {
     console.log('clicked');
   }
 
+  onSearchChange(ev?: any) {
+    console.log(ev);
+  }
+
+  handleInput(ev?: any) {
+    console.log(ev);
+  }
+
 }

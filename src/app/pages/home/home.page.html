@@ -4,7 +4,8 @@
 
 <ion-content fullscreen="true">
   <div id="map" class="map"></div>
-  <ion-searchbar placeholder="Explore primate sites" class="custom">
+  <ion-searchbar placeholder="Explore primate sites" class="custom" clearIcon="false"
+    (ionChange)="onSearchChange($event)" (ionInput)="handleInput($event)" [debounce]="250">
     <ion-menu-button></ion-menu-button>
   </ion-searchbar>
   <ion-row>
