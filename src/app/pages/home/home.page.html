@@ -8,7 +8,13 @@
     (ionChange)="onSearchChange($event)" (ionInput)="handleInput($event)" [debounce]="250">
     <ion-menu-button></ion-menu-button>
   </ion-searchbar>
-  <ion-row>
+  <ion-list *ngIf="results.length > 0" class="ion-margin-horizontal ion-padding-end">
+    <ion-item *ngFor="let result of results">
+      <ion-label>{{ result.title }}</ion-label>
+      <ion-img [src]="result.logo" [alt]="result.location"></ion-img>
+    </ion-item>
+  </ion-list>
+  <ion-row *ngIf="results.length === 0">
     <ion-col size="12" class="filter_col ion-justify-content-between">
       <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" size="small">
         <ion-icon name="earth-outline"></ion-icon>

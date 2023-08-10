@@ -15,11 +15,55 @@ export class HomePage implements OnInit {
   faLayerGroup = faLayerGroup;
   faLocationArrow = faLocationArrow;
 
-  map: mapboxgl.Map | undefined;
+  map!: mapboxgl.Map;
   style = 'mapbox://styles/mapbox/streets-v11';
   lat = 2.2180;
   lng = 115.6628;
 
+  primateProjects: any = [
+    {
+      title: 'Primate Project 1',
+      description: 'Primate Project 1 description',
+      location: [121.7740, 12.8797],
+      country: 'Indonesia',
+      url: 'Primate Project 1 url',
+      logo: '../../../assets/indonesia.svg'
+    },
+    {
+      title: 'Primate Project 2',
+      description: 'Primate Project 1 description',
+      location: [113.9213, 0.7893],
+      country: 'Phillipines',
+      url: 'Primate Project 1 url',
+      logo: '../../../assets/phillipines.svg'
+    },
+    {
+      title: 'Primate Project 3',
+      description: 'Primate Project 1 description',
+      location: [100.9925, 15.8700],
+      country: 'Papua New Guinea',
+      url: 'Primate Project 1 url',
+      logo: '../../../assets/papua-new-guinea.svg'
+    },
+    {
+      title: 'Primate Project 4',
+      description: 'Primate Project 1 description',
+      location: [114.7277, 4.5353],
+      country: 'Indonesia',
+      url: 'Primate Project 1 url',
+      logo: '../../../assets/indonesia.svg'
+    },
+    {
+      title: 'Primate Project 5',
+      description: 'Primate Project 1 description',
+      location: [115.7277, 5.5353],
+      country: 'Thailand',
+      url: 'Primate Project 1 url',
+      logo: '../../../assets/brunei.svg'
+    }
+  ]
+
+  results: any[] = [];
 
   constructor() { }
 
@@ -37,19 +81,11 @@ export class HomePage implements OnInit {
       }
     });
 
-    const marker1 = new mapboxgl.Marker()
-      .setLngLat([121.7740, 12.8797])
-      .addTo(this.map);
-    const marker2 = new mapboxgl.Marker()
-      .setLngLat([113.9213, 0.7893])
-      .addTo(this.map);
-    const marker3 = new mapboxgl.Marker()
-      .setLngLat([100.9925, 15.8700])
-      .addTo(this.map);
-    const marker4 = new mapboxgl.Marker()
-      .setLngLat([114.7277, 4.5353])
-      .addTo(this.map);
-
+    this.primateProjects.forEach((project: any) => {
+      const marker = new mapboxgl.Marker()
+        .setLngLat(project.location)
+        .addTo(this.map);
+    });
   }
 
   onClick() {
@@ -61,7 +97,12 @@ export class HomePage implements OnInit {
   }
 
   handleInput(ev?: any) {
-    console.log(ev);
+    if (ev.target.value.length === 0) {
+      this.results = [];
+    } else {
+      const query = ev.target.value.toLowerCase();
+      this.results = this.primateProjects.filter((d: any) => d.title.toLowerCase().indexOf(query) > -1);
+    }
   }
 
 }
