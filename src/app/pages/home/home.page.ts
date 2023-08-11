@@ -20,6 +20,8 @@ export class HomePage implements OnInit {
   lat = 2.2180;
   lng = 115.6628;
 
+  mapfilter: string = 'all'
+
   primateProjects: any = [
     {
       title: 'Primate Project 1',
@@ -27,7 +29,9 @@ export class HomePage implements OnInit {
       location: [121.7740, 12.8797],
       country: 'Indonesia',
       url: 'Primate Project 1 url',
-      logo: '../../../assets/indonesia.svg'
+      logo: '../../../assets/indonesia.svg',
+      isFavourite: true,
+      hasBeen: true
     },
     {
       title: 'Primate Project 2',
@@ -35,7 +39,9 @@ export class HomePage implements OnInit {
       location: [113.9213, 0.7893],
       country: 'Phillipines',
       url: 'Primate Project 1 url',
-      logo: '../../../assets/phillipines.svg'
+      logo: '../../../assets/phillipines.svg',
+      isFavourite: false,
+      hasBeen: false
     },
     {
       title: 'Primate Project 3',
@@ -43,7 +49,9 @@ export class HomePage implements OnInit {
       location: [100.9925, 15.8700],
       country: 'Papua New Guinea',
       url: 'Primate Project 1 url',
-      logo: '../../../assets/papua-new-guinea.svg'
+      logo: '../../../assets/papua-new-guinea.svg',
+      isFavourite: false,
+      hasBeen: true
     },
     {
       title: 'Primate Project 4',
@@ -51,7 +59,9 @@ export class HomePage implements OnInit {
       location: [114.7277, 4.5353],
       country: 'Indonesia',
       url: 'Primate Project 1 url',
-      logo: '../../../assets/indonesia.svg'
+      logo: '../../../assets/indonesia.svg',
+      isFavourite: false,
+      hasBeen: false
     },
     {
       title: 'Primate Project 5',
@@ -59,37 +69,41 @@ export class HomePage implements OnInit {
       location: [115.7277, 5.5353],
       country: 'Thailand',
       url: 'Primate Project 1 url',
-      logo: '../../../assets/brunei.svg'
+      logo: '../../../assets/brunei.svg',
+      isFavourite: false,
+      hasBeen: true
     }
   ]
 
   results: any[] = [];
 
+  markers: any[] = [];
+
   constructor() { }
 
   ngOnInit() {
-    this.map = new mapboxgl.Map({
-      accessToken: environment.mapbox.accessToken,
-      container: 'map',
-      style: this.style,
-      zoom: 2,
-      center: [this.lng, this.lat]
-    });
-    this.map.on('load', () => {
-      if (this.map) {
-        this.map.resize();
-      }
-    });
+    this.loadMap();
 
     this.primateProjects.forEach((project: any) => {
       const marker = new mapboxgl.Marker()
         .setLngLat(project.location)
         .addTo(this.map);
+
+      this.markers.push({ marker, isFavourite: project.isFavourite, hasBeen: project.hasBeen });
     });
   }
 
-  onClick() {
-    console.log('clicked');
+  updateMapFilter(filter: string) {
+    this.mapfilter = filter;
+    this.markers.forEach((marker: any) => {
+      if ((filter === 'favourites' && marker.isFavourite) || (filter === 'been' && marker.hasBeen)) {
+        marker.marker.addTo(this.map);
+      } else if (filter === 'all') {
+        marker.marker.addTo(this.map);
+      } else {
+        marker.marker.remove();
+      }
+    });
   }
 
   onSearchChange(ev?: any) {
@@ -103,6 +117,21 @@ export class HomePage implements OnInit {
       const query = ev.target.value.toLowerCase();
       this.results = this.primateProjects.filter((d: any) => d.title.toLowerCase().indexOf(query) > -1);
     }
+  }
+
+  loadMap() {
+    this.map = new mapboxgl.Map({
+      accessToken: environment.mapbox.accessToken,
+      container: 'map',
+      style: this.style,
+      zoom: 2,
+      center: [this.lng, this.lat]
+    });
+    this.map.on('load', () => {
+      if (this.map) {
+        this.map.resize();
+      }
+    });
   }
 
 }

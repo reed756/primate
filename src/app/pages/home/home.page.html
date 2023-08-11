@@ -16,21 +16,24 @@
   </ion-list>
   <ion-row *ngIf="results.length === 0">
     <ion-col size="12" class="filter_col ion-justify-content-between">
-      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" size="small">
+      <ion-button (click)="updateMapFilter('all')" expand="block" fill="clear" shape="round" size="small"
+        [ngClass]="{'btn_selected' : mapfilter === 'all'}">
         <ion-icon name="earth-outline"></ion-icon>
         All Sites
       </ion-button>
-      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" size="small">
+      <ion-button (click)="updateMapFilter('favourites')" expand="block" fill="clear" shape="round" size="small"
+        [ngClass]="{'btn_selected' : mapfilter === 'favourites'}">
         <ion-icon name="star-outline"></ion-icon>
         Favourites
       </ion-button>
-      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" size="small">
+      <ion-button (click)="updateMapFilter('been')" expand="block" fill="clear" shape="round" size="small"
+        [ngClass]="{'btn_selected' : mapfilter === 'been'}">
         <ion-icon name="checkmark-circle-outline"></ion-icon>
         I've Been
       </ion-button>
     </ion-col>
   </ion-row>
-  <ion-fab slot="fixed" vertical="top" horizontal="end" class="side_fab">
+  <ion-fab *ngIf="results.length === 0" slot="fixed" vertical="top" horizontal="end" class="side_fab">
     <ion-fab-button size="small"><fa-icon [icon]="faTableList"></fa-icon></ion-fab-button>
     <ion-fab-button size="small"><fa-icon [icon]="faLayerGroup"></fa-icon></ion-fab-button>
     <ion-fab-button size="small"><fa-icon [icon]="faLocationArrow"></fa-icon></ion-fab-button>
@@ -38,7 +41,7 @@
   <!-- <img src="../../assets/cluster.svg" alt="map_markers" class="map_markers"> -->
   <ion-row class="guidelines_row">
     <ion-col size="12">
-      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+      <ion-button expand="block" fill="clear" shape="round">
         Guidelines
         <img src="../../assets/little_monkey.svg" alt="monkey_icon">
       </ion-button>
