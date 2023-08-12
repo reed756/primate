@@ -11,7 +11,7 @@
   <ion-list *ngIf="results.length > 0" class="ion-margin-horizontal ion-padding-end">
     <ion-item *ngFor="let result of results">
       <ion-label>{{ result.title }}</ion-label>
-      <ion-img [src]="result.logo" [alt]="result.location"></ion-img>
+      <ion-img [src]="result.logo" [alt]="result.country"></ion-img>
     </ion-item>
   </ion-list>
   <ion-row *ngIf="results.length === 0">

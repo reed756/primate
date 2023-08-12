@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { faTableList } from '@fortawesome/free-solid-svg-icons';
 import { faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
+import { ModalController } from '@ionic/angular';
 import * as mapboxgl from 'mapbox-gl';
+import { ProjectModalComponent } from 'src/app/modals/project-modal/project-modal.component';
 import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-home',
@@ -79,15 +81,28 @@ export class HomePage implements OnInit {
 
   markers: any[] = [];
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.loadMap();
 
-    this.primateProjects.forEach((project: any) => {
+    this.primateProjects.forEach(async (project: any) => {
       const marker = new mapboxgl.Marker()
         .setLngLat(project.location)
-        .addTo(this.map);
+        .addTo(this.map)
+
+      marker.getElement().addEventListener("click", async () => {
+        console.log("function");
+        const modal = await this.modalCtrl.create({
+          component: ProjectModalComponent,
+          initialBreakpoint: 0.5,
+          breakpoints: [0, 0.5, 0.7, 0.9],
+          componentProps: {
+            project: project
+          }
+        });
+        modal.present();
+      });
 
       this.markers.push({ marker, isFavourite: project.isFavourite, hasBeen: project.hasBeen });
     });
@@ -133,5 +148,4 @@ export class HomePage implements OnInit {
       }
     });
   }
-
 }
