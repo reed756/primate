@@ -1,3 +1,13 @@
-ion-img {
-  height: 16px;
+.flag {
+  height: 14px;
+}
+.flag_box {
+  display: flex;
+  align-items: center;
+  ion-img {
+    margin-right: 4px;
+  }
+}
+ion-icon {
+  font-size: 24px;
 }

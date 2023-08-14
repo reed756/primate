@@ -30,8 +30,8 @@ export class HomePage implements OnInit {
       description: 'Primate Project 1 description',
       location: [121.7740, 12.8797],
       country: 'Indonesia',
-      url: 'Primate Project 1 url',
-      logo: '../../../assets/indonesia.svg',
+      url: '../../../assets/project-img/project-img-1.svg',
+      logo: '../../../assets/flags/indonesia.svg',
       isFavourite: true,
       hasBeen: true
     },
@@ -40,8 +40,8 @@ export class HomePage implements OnInit {
       description: 'Primate Project 1 description',
       location: [113.9213, 0.7893],
       country: 'Phillipines',
-      url: 'Primate Project 1 url',
-      logo: '../../../assets/phillipines.svg',
+      url: '../../../assets/project-img/project-img-2.svg',
+      logo: '../../../assets/flags/phillipines.svg',
       isFavourite: false,
       hasBeen: false
     },
@@ -50,8 +50,8 @@ export class HomePage implements OnInit {
       description: 'Primate Project 1 description',
       location: [100.9925, 15.8700],
       country: 'Papua New Guinea',
-      url: 'Primate Project 1 url',
-      logo: '../../../assets/papua-new-guinea.svg',
+      url: '../../../assets/project-img/project-img-3.svg',
+      logo: '../../../assets/flags/papua-new-guinea.svg',
       isFavourite: false,
       hasBeen: true
     },
@@ -60,8 +60,8 @@ export class HomePage implements OnInit {
       description: 'Primate Project 1 description',
       location: [114.7277, 4.5353],
       country: 'Indonesia',
-      url: 'Primate Project 1 url',
-      logo: '../../../assets/indonesia.svg',
+      url: '../../../assets/project-img/project-img-4.svg',
+      logo: '../../../assets/flags/indonesia.svg',
       isFavourite: false,
       hasBeen: false
     },
@@ -70,8 +70,8 @@ export class HomePage implements OnInit {
       description: 'Primate Project 1 description',
       location: [115.7277, 5.5353],
       country: 'Thailand',
-      url: 'Primate Project 1 url',
-      logo: '../../../assets/brunei.svg',
+      url: '../../../assets/project-img/project-img-1.svg',
+      logo: '../../../assets/flags/brunei.svg',
       isFavourite: false,
       hasBeen: true
     }
