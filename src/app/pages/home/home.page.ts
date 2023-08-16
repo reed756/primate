@@ -81,6 +81,8 @@ export class HomePage implements OnInit {
 
   markers: any[] = [];
 
+  searchQuery: string = '';
+
   constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
@@ -128,9 +130,10 @@ export class HomePage implements OnInit {
   handleInput(ev?: any) {
     if (ev.target.value.length === 0) {
       this.results = [];
+      this.searchQuery = '';
     } else {
-      const query = ev.target.value.toLowerCase();
-      this.results = this.primateProjects.filter((d: any) => d.title.toLowerCase().indexOf(query) > -1);
+      this.searchQuery = ev.target.value.toLowerCase();
+      this.results = this.primateProjects.filter((d: any) => d.title.toLowerCase().indexOf(this.searchQuery) > -1);
     }
   }
 

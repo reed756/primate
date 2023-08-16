@@ -8,10 +8,15 @@
     (ionChange)="onSearchChange($event)" (ionInput)="handleInput($event)" [debounce]="250">
     <ion-menu-button></ion-menu-button>
   </ion-searchbar>
-  <ion-list *ngIf="results.length > 0" class="ion-margin-horizontal ion-padding-end">
+  <ion-list *ngIf="results.length > 0 && searchQuery.length > 0" class="ion-margin-horizontal ion-padding-end">
     <ion-item *ngFor="let result of results">
       <ion-label>{{ result.title }}</ion-label>
       <ion-img [src]="result.logo" [alt]="result.country"></ion-img>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="results.length === 0 && searchQuery.length > 0" class="ion-margin-horizontal ion-padding-end">
+    <ion-item>
+      <ion-label>No results match that search query.</ion-label>
     </ion-item>
   </ion-list>
   <ion-row *ngIf="results.length === 0">
