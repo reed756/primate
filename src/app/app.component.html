@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu contentId="main-content" type="overlay" *ngIf="(authService.loggedIn$ | async) === null">
       <ion-content class="safe--area">
         <ion-row>
           <ion-col size="12">

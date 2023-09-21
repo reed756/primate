@@ -8,7 +8,7 @@
     </ion-col>
   </ion-row>
   <ion-row class="form_row ion-padding-top ion-margin-top">
-    <ion-col size="12" class="ion-no-padding">
+    <ion-col offsetMd="3" sizeMd="6" size="12" class="ion-no-padding">
       <form [formGroup]="signUpForm">
         <ion-label for="fullName">Full Name</ion-label>
         <ion-input name="fullName" type="text" fill="outline" formControlName="fullName"
@@ -29,9 +29,9 @@
         <ion-item lines="none" class="ion-margin-bottom border"
           [ngClass]="{green_shadow : signUpForm.controls['password'].valid && (signUpForm.controls['password'].dirty || signUpForm.controls['password'].touched), red_shadow : signUpForm.controls['password'].invalid && (signUpForm.controls['password'].dirty || signUpForm.controls['password'].touched)}">
           <ion-input name="password" [type]="showPassword ? 'text' : 'password'" fill="outline"
-            formControlName="password">
+            formControlName="password" class="password_input">
           </ion-input>
-          <ion-button (click)="togglePassword()">
+          <ion-button (click)="togglePassword()" class="password_btn">
             <ion-icon slot="icon-only" name="eye" *ngIf="showPassword"></ion-icon>
             <ion-icon slot="icon-only" name="eye-off" *ngIf="!showPassword"></ion-icon>
           </ion-button>
@@ -52,7 +52,7 @@
     </ion-col>
   </ion-row>
   <ion-row class="button_row">
-    <ion-col size="12" class="ion-no-padding">
+    <ion-col offsetMd="3" sizeMd="6" size="12" class="ion-no-padding">
       <ion-button (click)="signUp()" expand="block" class="sign_in_btn" [disabled]="!signUpForm.valid">
         Create Account
       </ion-button>

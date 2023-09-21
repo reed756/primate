@@ -33,6 +33,13 @@
         --background: transparent;
         --background-activated: transparent;
       }
+      .password_input {
+        --border-width: 0;
+      }
+      .password_btn {
+        --border-width: 0;
+        --box-shadow: none;
+      }
     }
     ion-input {
       font-size: 14.22px;

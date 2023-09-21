@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { MenuController } from '@ionic/angular';
 import { register } from 'swiper/element/bundle';
+import { AuthService } from './services/auth/auth.service';
 
 register();
 @Component({
@@ -21,7 +22,7 @@ export class AppComponent {
     { title: 'Language', url: '/language' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor(private menu: MenuController, private router: Router) {
+  constructor(private menu: MenuController, private router: Router, public authService: AuthService) {
     this.initApp()
   }
 

@@ -4,12 +4,12 @@
 
 <ion-content class="ion-padding">
   <ion-row class="icon_row">
-    <ion-col size="12" class="ion-no-padding">
+    <ion-col offsetMd="3" sizeMd="6" size="12" class="ion-no-padding">
       <ion-icon name="chevron-down-circle"></ion-icon>
     </ion-col>
   </ion-row>
   <ion-row class="form_row ion-padding-top ion-margin-top">
-    <ion-col size="12" class="ion-no-padding">
+    <ion-col offsetMd="3" sizeMd="6" size="12" class="ion-no-padding">
       <form [formGroup]="signInForm">
         <ion-label for="email">Email</ion-label>
         <ion-input name="email" type="text" fill="outline" formControlName="email" class="ion-margin-bottom border"
@@ -22,9 +22,9 @@
         <ion-item lines="none" class="border"
           [ngClass]="{green_shadow : signInForm.controls['password'].valid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched), red_shadow : signInForm.controls['password'].invalid && (signInForm.controls['password'].dirty || signInForm.controls['password'].touched)}">
           <ion-input name="password" [type]="showPassword ? 'text' : 'password'" fill="outline"
-            formControlName="password">
+            formControlName="password" class="password_input">
           </ion-input>
-          <ion-button (click)="togglePassword()">
+          <ion-button (click)="togglePassword()" class="password_btn">
             <ion-icon slot="icon-only" name="eye" *ngIf="showPassword"></ion-icon>
             <ion-icon slot="icon-only" name="eye-off" *ngIf="!showPassword"></ion-icon>
           </ion-button>
@@ -37,7 +37,7 @@
     </ion-col>
   </ion-row>
   <ion-row class="button_row">
-    <ion-col size="12" class="ion-no-padding">
+    <ion-col offsetMd="3" sizeMd="6" size="12" class="ion-no-padding">
       <ion-button (click)="forgotPassword()" expand="block" fill="clear" shape="round"
         class="forgot_password_btn ion-margin-bottom">
         Forgot your password?
